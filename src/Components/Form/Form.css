@@ -2,7 +2,8 @@
   margin: 10px auto 20px;
 }
 
-.form form select {
+.form form select,
+.form form input {
   display: block;
   width: 100%;
   padding: 8px 12px;
@@ -31,11 +32,18 @@
 }
 
 .form form select:focus,
+.form form input:focus,
 .form form button:focus {
   outline: none;
 }
 
+.form form select:focus,
+.form form input:focus {
+  box-shadow: 0 0 10px var(--input-focus);
+}
+
 .form form select[disabled],
+.form form input[disabled],
 .form form button[disabled] {
   cursor: not-allowed;
 }

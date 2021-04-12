@@ -12,36 +12,24 @@ class Form extends React.Component {
   // Render Method
   render() {
     // Get Props
-    let {cities, countries, getCities, getWeather} = this.props;
+    let {countries, getWeather} = this.props;
     return (
       <div className="form">
         <form onSubmit={getWeather}>
           <select name="countries" id="countries" onChange={(e) => {
-            // Get Cities Of Selected Country
-            getCities(e.target.value);
-            // Unlock Cities Select
+            // Unlock City Input
             e.target.nextElementSibling.removeAttribute("disabled");
-            // Unlock Button Click
-            e.target.nextElementSibling.nextElementSibling.removeAttribute("disabled");
           }}>
             <option>-- Select Country --</option>
             {
               countries.map((country, index) => {
                 return (
-                  <option key={index} value={country.id}>{country.name}</option>
+                  <option key={index} value={country.name}>{country.name}</option>
                 );
               })
             }
           </select>
-          <select name="cities" id="cities" disabled>
-            {
-              cities.map((city, index) => {
-                return (
-                  <option key={index} value={city.id}>{city.name}</option>
-                );
-              })
-            }
-          </select>
+          <input type="text" name='city' id='city' placeholder='Enter City' disabled onChange={(e) => e.target.nextElementSibling.removeAttribute("disabled")} />
           <button type="submit" disabled>Get Weather</button>
         </form>
       </div>

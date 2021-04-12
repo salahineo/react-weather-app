@@ -54,3 +54,20 @@
 .weather .additional-info .info .value i {
   width: 30px;
 }
+
+.weather .error {
+  text-align: center;
+}
+
+.weather .error span {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.weather .error i {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 50px;
+}

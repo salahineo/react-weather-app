@@ -34,6 +34,9 @@ const Weather = (props) => {
           <span className="info"><i className="fas fa-moon" /> <span className="name">Sunset</span> <span className="value">{props.weather_sunset}</span></span>}
         </span>
       </div>
+      <div className="error">
+        {props.error && <span><i className="fas fa-exclamation-circle" /> {props.error}</span>}
+      </div>
     </div>
   );
 };
