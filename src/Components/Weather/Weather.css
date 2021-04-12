@@ -1,0 +1,56 @@
+.weather .temperature span {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.weather .description {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.weather .additional-info {
+  margin-top: 40px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.weather .additional-info .info {
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.weather .additional-info .info i {
+  width: 40px;
+  text-align: center;
+}
+
+.weather .additional-info .info .name {
+  width: 100px;
+  display: inline-block;
+}
+
+.weather .additional-info .info .value i {
+  width: 30px;
+}

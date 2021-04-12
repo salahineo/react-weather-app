@@ -1,0 +1,45 @@
+.form {
+  margin: 10px auto 20px;
+}
+
+.form form select {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin: 10px auto;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border: none;
+  transition: 0.25s;
+}
+
+.form form button {
+  display: block;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto 0;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #ffffff;
+  background: var(--button-background);
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.form form button:not([disabled]):hover {
+  opacity: 0.9;
+}
+
+.form form select:focus,
+.form form button:focus {
+  outline: none;
+}
+
+.form form select[disabled],
+.form form button[disabled] {
+  cursor: not-allowed;
+}
+
+.form form select option:first-of-type {
+  display: none;
+}
