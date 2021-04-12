@@ -3,11 +3,15 @@
 [data-theme = 'cold'] {
   --body-background: linear-gradient(to left, #243B55, #141E30);
   --button-background: linear-gradient(to left, #385575, #2b3d5f);
+  --footer-color: #0092da;
+  --footer-border-color: #3d5e8a;
 }
 
 [data-theme = 'warm'] {
   --body-background: linear-gradient(to left, #905a5e, #44183c);
   --button-background: linear-gradient(to left, #973165, #7a2d63);
+  --footer-color: #ff8b8b;
+  --footer-border-color: #8e555e;
 }
 
 /* Styles */

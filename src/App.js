@@ -3,6 +3,7 @@ import "./App.css";
 import "./assets/css/font-awesome/css/fontawesome.css";
 import Form from "./Components/Form/Form";
 import Weather from "./Components/Weather/Weather";
+import Footer from "./Components/Footer/Footer";
 
 const cities = require("./Data/cities.json");
 const countries = require("./Data/countries.json");
@@ -123,6 +124,7 @@ class App extends React.Component {
                      weather_sunset={this.state.weather_sunset} />
           </main>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }
