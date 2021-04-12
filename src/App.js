@@ -6,8 +6,6 @@ import Weather from "./Components/Weather/Weather";
 import Footer from "./Components/Footer/Footer";
 
 // Require Countries & Cities Data
-const cities = require("./Data/cities.json");
-const countries = require("./Data/countries.json");
 
 // OpenWeatherMap [Personal] API Key
 const API_Key = "d2b8ce582dda5538a8f06a810447abc7";
@@ -32,6 +30,7 @@ class App extends React.Component {
 
   // Get List Of Countries
   getCountries = () => {
+  const countries = require("./Data/countries.json");
     // Temporary Array
     let tempArray = [];
     // Loop Through Countries JSON File
@@ -47,6 +46,8 @@ class App extends React.Component {
 
   // Get List Of Data For Specific Country
   getCities = (country) => {
+    const cities = require("./Data/cities.json");
+
     // Temporary Array
     let tempArray = [];
     // Loop Through JSON File
