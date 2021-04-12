@@ -34,11 +34,6 @@ const Weather = (props) => {
           <span className="info"><i className="fas fa-moon" /> <span className="name">Sunset</span> <span className="value">{props.weather_sunset}</span></span>}
         </span>
       </div>
-      {/*{props.weather_pressure && <p>Pressure: {props.weather_pressure}</p>}*/}
-      {/*{props.weather_wind_speed && <p>Wind Speed: {props.weather_wind_speed}</p>}*/}
-      {/*{props.weather_wind_degree && <p>Wind Degree: {props.weather_wind_degree}</p>}*/}
-      {/*{props.weather_sunrise && <p>Sunrise: {props.weather_sunrise}</p>}*/}
-      {/*{props.weather_sunset && <p>Sunset: {props.weather_sunset}</p>}*/}
     </div>
   );
 };

@@ -2,11 +2,14 @@ import React from "react";
 import "./Form.css";
 
 class Form extends React.Component {
+
+  // Component Did Mount Method
   componentDidMount() {
-    // Get Props
+    // Load Countries After Component Load
     this.props.getCountries();
   }
 
+  // Render Method
   render() {
     // Get Props
     let {cities, countries, getCities, getWeather} = this.props;
@@ -14,16 +17,16 @@ class Form extends React.Component {
       <div className="form">
         <form onSubmit={getWeather}>
           <select name="countries" id="countries" onChange={(e) => {
-            // Get Cities Of This Country
+            // Get Cities Of Selected Country
             getCities(e.target.value);
             // Unlock Cities Select
             e.target.nextElementSibling.removeAttribute("disabled");
+            // Unlock Button Click
             e.target.nextElementSibling.nextElementSibling.removeAttribute("disabled");
           }}>
             <option>-- Select Country --</option>
             {
               countries.map((country, index) => {
-
                 return (
                   <option key={index} value={country.id}>{country.name}</option>
                 );

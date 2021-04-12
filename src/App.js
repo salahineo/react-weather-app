@@ -5,14 +5,16 @@ import Form from "./Components/Form/Form";
 import Weather from "./Components/Weather/Weather";
 import Footer from "./Components/Footer/Footer";
 
+// Require Countries & Cities Data
 const cities = require("./Data/cities.json");
 const countries = require("./Data/countries.json");
 
+// OpenWeatherMap [Personal] API Key
 const API_Key = "d2b8ce582dda5538a8f06a810447abc7";
 
 class App extends React.Component {
 
-  // State For Countries & Data
+  // State Data
   state = {
     countries: [],
     cities: [],
@@ -32,8 +34,9 @@ class App extends React.Component {
   getCountries = () => {
     // Temporary Array
     let tempArray = [];
-    // Loop Through JSON File
+    // Loop Through Countries JSON File
     for (let i = 0; i < countries.length; i++) {
+      // Push Current Country To Array
       tempArray.push(countries[i]);
     }
     // Update Data State
@@ -62,12 +65,16 @@ class App extends React.Component {
 
   // Toggle Color Mode
   toggleColorMode = () => {
+    // Get Temperature From State
     let {weather_temperature} = this.state;
     if (weather_temperature === "") {
+      // Temperature Is Empty
       document.documentElement.setAttribute("data-theme", "cold");
     } else if (weather_temperature > 18) {
+      // Temperature > 18
       document.documentElement.setAttribute("data-theme", "warm");
     } else {
+      // Temperature < 18
       document.documentElement.setAttribute("data-theme", "cold");
     }
   };
@@ -76,18 +83,20 @@ class App extends React.Component {
   getWeather = async (e) => {
     // Prevent Form Reloading
     e.preventDefault();
+    // Get Selected City ID
     let cityID = e.target.elements.cities.value;
+    // Fetch API Data For This City
     const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityID}&units=metric&appid=${API_Key}`);
+    // Convert Data To JSON
     const readableData = await data.json();
-    // Sunrise Convert
+    // Sunrise Convert To Readable Date
     const sunriseTime = new Date(readableData.sys.sunrise * 1000);
     const sunsetTime = new Date(readableData.sys.sunset * 1000);
-
     let sunrise = sunriseTime.toLocaleString("en-US").split(", ")[1];
     let sunset = sunsetTime.toLocaleString("en-US").split(", ")[1];
     //console.log(readableData.wind.deg * 100);
 
-    // Set Data To State
+    // Set Weather Data To State
     this.setState({
       weather_description: readableData.weather[0].description,
       weather_temperature: Math.round(readableData.main.temp),
@@ -99,9 +108,11 @@ class App extends React.Component {
       weather_sunrise: sunrise,
       weather_sunset: sunset
     });
+    // Toggle Color Mode Depend On Temperature
     await this.toggleColorMode();
   };
 
+  // Render Method
   render() {
     return (
       <React.Fragment>
