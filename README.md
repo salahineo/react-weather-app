@@ -36,7 +36,7 @@ Here is the demo of this [application](https://salahineo.github.io/react-weather
 
 ### Installation
 
-Here are the guidelines to run this project on your localhost (you should install node.js on your machine):
+Here are the guidelines to run this project on your localhost (you should install node.js on your machine at first):
 
 1. Clone (Download) this repo on your machine
 2. Open terminal in repo directory
