@@ -12,7 +12,7 @@ Weather App is a dynamic application providing real-time weather updates. With a
 
 ### 🌐 Demo
 
-Check out the live demo [here](https://notes.portfolio.salahineo.com).
+Check out the live demo [here](https://weather.portfolio.salahineo.com/).
 
 ---
 
